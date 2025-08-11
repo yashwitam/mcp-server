@@ -2,7 +2,7 @@ from pydantic import Field
 from mcp.server.fastmcp import FastMCP
 from mcp.server.fastmcp.prompts import base
 
-mcp = FastMCP("DocumentMCP", log_level="ERROR")
+mcp = FastMCP("DocumentMCP", log_level="DEBUG")
 
 
 docs = {
@@ -58,7 +58,6 @@ def fetch_doc(doc_id: str) -> str:
     if doc_id not in docs:
         raise ValueError(f"Doc with id {doc_id} not found")
     return docs[doc_id]
-
 
 
 # Write a prompt to rewrite a doc in markdown format
